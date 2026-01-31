@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yayyy 🥹</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="yes-page">
+    <audio id="loveSong" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+<script>
+    const song = document.getElementById("loveSong");
+
+    song.volume = 0;        // start silent
+    const targetVolume = 0.4; // romantic, not loud
+    const fadeSpeed = 0.02;   // slower = smoother
+
+    song.addEventListener("play", () => {
+        const fadeIn = setInterval(() => {
+            if (song.volume < targetVolume) {
+                song.volume = Math.min(song.volume + fadeSpeed, targetVolume);
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 200);
+    });
+</script>
+
+
+    <div class="yes-card">
+        <img src="C:\Users\arkar\Downloads\us.jpg" alt="Love">
+        <p class="caption">
+            Thanks Kuchupuchu<br>
+        I love you so much!😘
+        </p>
+    </div>
+
+</body>
+</html>
+
