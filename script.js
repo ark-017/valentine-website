@@ -2,7 +2,7 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const confettiContainer = document.getElementById("confetti-container");
 
-// YES click (unchanged)
+// YES button
 yesBtn.addEventListener("click", () => {
     createConfetti();
     setTimeout(() => {
@@ -10,16 +10,26 @@ yesBtn.addEventListener("click", () => {
     }, 1200);
 });
 
-// 😈 NO button runs away
-noBtn.addEventListener("mouseenter", () => {
-    const maxX = 120;
-    const maxY = 120;
+// Function to move NO button
+function moveNoButton() {
+    const maxX = 140;
+    const maxY = 140;
 
     const x = Math.random() * maxX * 2 - maxX;
     const y = Math.random() * maxY * 2 - maxY;
 
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+// 🖱 Desktop: hover
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+// 📱 Mobile: touch
+noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // stop click
+    moveNoButton();
 });
+
 
 
 // Confetti generator
@@ -44,6 +54,7 @@ function createConfetti() {
         }, 2000);
     }
 }
+
 
 
 
