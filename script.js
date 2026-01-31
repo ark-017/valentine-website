@@ -2,12 +2,23 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const confettiContainer = document.getElementById("confetti-container");
 
+// YES click (unchanged)
 yesBtn.addEventListener("click", () => {
     createConfetti();
-
     setTimeout(() => {
         window.location.href = "yes.html";
-    }, 1200); // enough time to enjoy confetti
+    }, 1200);
+});
+
+// 😈 NO button runs away
+noBtn.addEventListener("mouseenter", () => {
+    const maxX = 120;
+    const maxY = 120;
+
+    const x = Math.random() * maxX * 2 - maxX;
+    const y = Math.random() * maxY * 2 - maxY;
+
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 
@@ -36,14 +47,5 @@ function createConfetti() {
 
 
 
-// Move away on hover
-noBtn.addEventListener("mouseenter", () => {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-});
 
-// Return back when mouse leaves
-noBtn.addEventListener("mouseleave", () => {
-    noBtn.style.transform = "translate(0, 0)";
-});
+
