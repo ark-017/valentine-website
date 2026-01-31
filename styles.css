@@ -110,6 +110,12 @@ button {
     transition: transform 0.25s ease;
     cursor: pointer;
 }
+#noBtn {
+    position: relative;
+    transition: transform 0.2s ease;
+    touch-action: manipulation;
+}
+
 
 
 button::after {
@@ -304,4 +310,5 @@ button:active::after {
     font-size: 17px;
   }
 }
+
 
