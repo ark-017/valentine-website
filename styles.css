@@ -100,20 +100,17 @@ button {
     transform: scale(1.15);
     box-shadow: 0 0 45px rgba(224,184,79,1);
 }
-
 #noBtn {
     background: linear-gradient(135deg, #F2A1B3, #ffb6c8);
     color: #333;
 
-    box-shadow:
-        0 8px 18px rgba(242,161,179,0.6);
+    box-shadow: 0 8px 18px rgba(242,161,179,0.6);
 
-    transition: transform 0.3s ease;
+    position: relative;
+    transition: transform 0.25s ease;
+    cursor: pointer;
 }
-#noBtn {
-    pointer-events: none;   /* 👈 cannot be clicked */
-    cursor: not-allowed;
-}
+
 
 button::after {
     content: "";
@@ -307,3 +304,4 @@ button:active::after {
     font-size: 17px;
   }
 }
+
